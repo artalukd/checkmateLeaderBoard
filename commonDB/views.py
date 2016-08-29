@@ -11,7 +11,7 @@ def refresh(request):
         print(1)
         for i in ip:
             print(2)
-            re = requests.get('http://'+ i +'/pokemon/send_all')
+            re = requests.get('http://'+ i +'/pokemon/send_all',timeout = (3,5))
             if re.status_code == 200:
                 d = re.json()
                 plst += d['players']
